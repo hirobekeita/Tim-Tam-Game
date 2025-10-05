@@ -30,9 +30,9 @@ function App() {
   // シーケンスを1つずつアニメーション表示
  useEffect(() => {
   if (gameStarted && displayedSequence.length < sequence.length) {
-    // 7回目（インデックス6）の表示かどうかを判定
+    // 8回目（インデックス7）の表示かどうかを判定
     const isSeventh = displayedSequence.length === 7;
-    const delay = isSeventh ? 830 : 350; // 改行時だけ1000ms、それ以外は350ms
+    const delay = isSeventh ? 830 : 370; // 改行時だけ830ms、それ以外は370ms
 
     const timer = setTimeout(() => {
       setDisplayedSequence(prev => [...prev, sequence[prev.length]])
