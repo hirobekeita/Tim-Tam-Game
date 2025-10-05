@@ -3,7 +3,7 @@
 
 """
 ティムタムゲーム (Tim-Tam Game)
-「ティム」と「タム」を順不同でランダムに7回表示し、改行して6回表示して、
+「ティム」と「タム」をランダムに13回表示し（7回表示後に改行して6回表示）、
 最後の1回に「ティム」か「タム」のどちらがくるかを当てるゲームです。
 ただし、正解は必ず回答の逆にします。
 """
@@ -13,16 +13,13 @@ import random
 
 def generate_alternating_sequence():
     """
-    「ティム」と「タム」がリズムよく一つずつ計13回表示される配列を生成します。
-    ランダムに開始する単語を選び、その後交互に配置します。
+    「ティム」と「タム」をランダムに13回表示する配列を生成します。
+    各位置で完全にランダムに選択されます。
     """
     words = ["ティム", "タム"]
-    # ランダムに開始する単語を選択
-    start_word = random.choice([0, 1])
-    
     sequence = []
     for i in range(13):
-        sequence.append(words[(start_word + i) % 2])
+        sequence.append(random.choice(words))
     
     return sequence
 
@@ -70,7 +67,7 @@ def main():
     print("\n「ティム」と「タム」が13回表示されます。")
     print("14回目に何がくるか当ててください！\n")
     
-    # 交互に配置されたシーケンスを生成
+    # ランダムなシーケンスを生成
     sequence = generate_alternating_sequence()
     
     # シーケンスを表示
