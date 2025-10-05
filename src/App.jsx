@@ -32,7 +32,7 @@ function App() {
   if (gameStarted && displayedSequence.length < sequence.length) {
     // 7回目（インデックス6）の表示かどうかを判定
     const isSeventh = displayedSequence.length === 7;
-    const delay = isSeventh ? 900 : 350; // 改行時だけ1000ms、それ以外は350ms
+    const delay = isSeventh ? 850 : 350; // 改行時だけ1000ms、それ以外は350ms
 
     const timer = setTimeout(() => {
       setDisplayedSequence(prev => [...prev, sequence[prev.length]])
@@ -76,8 +76,8 @@ function App() {
 
         {/* 説明 */}
         <div className="info-section">
-          <p>「ティム」と「タム」が13回表示されます。</p>
-          <p>14回目に何がくるか当ててください！</p>
+          <p>「ティム」と「タム」が表示されます。</p>
+          <p>最後に何がくるか当ててください！</p>
         </div>
 
         {/* シーケンス表示エリア */}
@@ -128,7 +128,7 @@ function App() {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <h2>結果</h2>
               <p className="result-text">
-                正解は... <strong>{result.correct}</strong> でした！
+                ×ブーッ <strong>{result.correct}</strong> ！
               </p>
               <p className={result.success ? 'success' : 'failure'}>
                 {result.success ? '当たりました！' : '残念！ハズレです！'}
