@@ -28,14 +28,19 @@ function App() {
   }
 
   // シーケンスを1つずつアニメーション表示
-  useEffect(() => {
-    if (gameStarted && displayedSequence.length < sequence.length) {
-      const timer = setTimeout(() => {
-        setDisplayedSequence(prev => [...prev, sequence[prev.length]])
-      }, 300) // 300ms間隔でリズムよく表示
-      return () => clearTimeout(timer)
-    }
-  }, [gameStarted, displayedSequence, sequence])
+ useEffect(() => {
+  if (gameStarted && displayedSequence.length < sequence.length) {
+    // 7回目（インデックス6）の表示かどうかを判定
+    const isSeventh = displayedSequence.length === 6;
+    const delay = isSeventh ? 1000 : 350; // 7回目だけ1000ms、それ以外は350ms
+
+    const timer = setTimeout(() => {
+      setDisplayedSequence(prev => [...prev, sequence[prev.length]])
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }
+}, [gameStarted, displayedSequence, sequence]);
 
   // ユーザーの推測を処理
   const makeGuess = (guess) => {
