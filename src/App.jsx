@@ -32,7 +32,7 @@ function App() {
   if (gameStarted && displayedSequence.length < sequence.length) {
     // 7回目（インデックス6）の表示かどうかを判定
     const isSeventh = displayedSequence.length === 7;
-    const delay = isSeventh ? 1000 : 350; // 改行時だけ1000ms、それ以外は350ms
+    const delay = isSeventh ? 900 : 350; // 改行時だけ1000ms、それ以外は350ms
 
     const timer = setTimeout(() => {
       setDisplayedSequence(prev => [...prev, sequence[prev.length]])
