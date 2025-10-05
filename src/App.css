@@ -129,13 +129,13 @@
 }
 
 .tam-button {
-  background: linear-gradient(135deg, #F06292 0%, #EC407A 100%);
-  box-shadow: 0 6px 18px rgba(233, 30, 99, 0.3);
+  background: linear-gradient(135deg, #FBC02D 0%, #F9A825 100%);
+  box-shadow: 0 6px 18px rgba(255, 193, 7, 0.3);
 }
 
 .tam-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(233, 30, 99, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 193, 7, 0.4);
 }
 
 .answer-button:active {
