@@ -129,8 +129,8 @@
 }
 
 .tam-button {
-  background: linear-gradient(135deg, #BA68C8 0%, #8E24AA 100%);
-  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+  background: linear-gradient(135deg, #F8BBD0 0%, #F48FB1 100%);
+  box-shadow: 0 4px 12px rgba(244, 143, 177, 0.4);
 }
 
 .tam-button:hover {
