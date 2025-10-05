@@ -10,9 +10,19 @@
 
 ## 実行方法
 
-### GUI版（推奨）
+### Reactアプリ版（推奨）
+
+#### 開発モードで実行
 ```bash
-python3 timtam_game_gui.py
+npm install
+npm run dev
+```
+ブラウザで `http://localhost:5173` を開いてください。
+
+#### 本番ビルド
+```bash
+npm run build
+npm run preview
 ```
 
 ### CLI版
@@ -21,5 +31,5 @@ python3 timtam_game.py
 ```
 
 ## 必要環境
-- Python 3.x
-- tkinter (GUI版の実行に必要、通常はPythonに標準で含まれています)
+- Node.js 18.x以上 (Reactアプリ用)
+- Python 3.x (CLI版用)

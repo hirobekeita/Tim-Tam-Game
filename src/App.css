@@ -1,0 +1,267 @@
+.app-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.game-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* タイトルバー */
+.title-bar {
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+  padding: 24px;
+  text-align: center;
+}
+
+.title-bar h1 {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* 説明セクション */
+.info-section {
+  padding: 24px;
+  text-align: center;
+  background: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.info-section p {
+  margin: 8px 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.info-section .warning {
+  margin-top: 16px;
+  padding: 12px;
+  background: #fff3cd;
+  border-radius: 8px;
+  color: #856404;
+}
+
+/* シーケンス表示エリア */
+.sequence-area {
+  padding: 32px 24px;
+  background: #f5f5f5;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.sequence-line {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 2px;
+}
+
+.placeholder {
+  color: #999;
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* ボタンエリア */
+.button-area {
+  padding: 32px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.start-button {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  border: none;
+  padding: 16px 48px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.start-button:active {
+  transform: translateY(0);
+}
+
+.answer-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.answer-button {
+  border: none;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.tim-button {
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.tim-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
+}
+
+.tam-button {
+  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+.tam-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+}
+
+.answer-button:active {
+  transform: translateY(0);
+}
+
+/* モーダルダイアログ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.result-text {
+  font-size: 18px;
+  margin: 16px 0;
+  color: #333;
+}
+
+.result-text strong {
+  color: #4A90E2;
+  font-size: 22px;
+}
+
+.modal-content .success {
+  color: #4CAF50;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+.modal-content .failure {
+  color: #f44336;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+.ok-button {
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.ok-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
+}
+
+.ok-button:active {
+  transform: translateY(0);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 640px) {
+  .game-card {
+    margin: 10px;
+  }
+
+  .title-bar h1 {
+    font-size: 24px;
+  }
+
+  .sequence-line {
+    font-size: 20px;
+  }
+
+  .answer-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .answer-button {
+    width: 100%;
+  }
+}
