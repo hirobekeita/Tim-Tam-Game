@@ -128,10 +128,7 @@ function App() {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <h2>結果</h2>
               <p className="result-text">
-                ブーッ× <strong>{result.correct}</strong> 
-              </p>
-              <p className={result.success ? 'success' : 'failure'}>
-                {result.success ? '当たりました！' : '残念！ハズレです！'}
+                ブーッ🙅‍♂️ <strong>{result.correct}</strong> 
               </p>
               <button className="ok-button" onClick={resetGame}>
                 もう一度プレイ
