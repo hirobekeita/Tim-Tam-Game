@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
@@ -6,6 +6,7 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false)
   const [showResult, setShowResult] = useState(false)
   const [result, setResult] = useState(null)
+  const [displayedSequence, setDisplayedSequence] = useState([])
 
   // ランダムなシーケンスを生成
   const generateRandomSequence = () => {
@@ -21,9 +22,20 @@ function App() {
   const startGame = () => {
     const newSequence = generateRandomSequence()
     setSequence(newSequence)
+    setDisplayedSequence([])
     setGameStarted(true)
     setShowResult(false)
   }
+
+  // シーケンスを1つずつアニメーション表示
+  useEffect(() => {
+    if (gameStarted && displayedSequence.length < sequence.length) {
+      const timer = setTimeout(() => {
+        setDisplayedSequence(prev => [...prev, sequence[prev.length]])
+      }, 300) // 300ms間隔でリズムよく表示
+      return () => clearTimeout(timer)
+    }
+  }, [gameStarted, displayedSequence, sequence])
 
   // ユーザーの推測を処理
   const makeGuess = (guess) => {
@@ -44,6 +56,7 @@ function App() {
   const resetGame = () => {
     setGameStarted(false)
     setSequence([])
+    setDisplayedSequence([])
     setShowResult(false)
     setResult(null)
   }
@@ -60,9 +73,6 @@ function App() {
         <div className="info-section">
           <p>「ティム」と「タム」が13回表示されます。</p>
           <p>14回目に何がくるか当ててください！</p>
-          <p className="warning">
-            <strong>注意:</strong> 正解は必ず回答の逆になります！
-          </p>
         </div>
 
         {/* シーケンス表示エリア */}
@@ -70,10 +80,10 @@ function App() {
           {gameStarted ? (
             <>
               <div className="sequence-line">
-                {sequence.slice(0, 7).join('')}
+                {displayedSequence.slice(0, 7).join('')}
               </div>
               <div className="sequence-line">
-                {sequence.slice(7, 13).join('')}
+                {displayedSequence.slice(7, 13).join('')}
               </div>
             </>
           ) : (
