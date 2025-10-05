@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "ティムタムゲーム",
   "type": "module",
-  "homepage": "https://hirobekeita.github.io/Tim-Tam-Game/",
+  "homepage": "https://hirobekeita.github.io/Tim-Tam-Game",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
